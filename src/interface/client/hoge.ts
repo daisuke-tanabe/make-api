@@ -2,10 +2,13 @@
  * ここでドメイン別でリクエストのインスタンス作成
  */
 import axios from 'axios';
+import { mock } from '../mock';
 
 // hogeインスタンスの作成
 const hoge = axios.create({
   baseURL: '/',
+  // 気になっているのはこのadapterがプロダクトコードに露出してしまうかどうか
+  adapter: mock,
 });
 
 // 共通のリクエスト処理
